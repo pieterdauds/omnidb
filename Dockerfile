@@ -7,7 +7,6 @@ ARG OMNIDB_VERSION=3.0.3b
 SHELL ["/bin/bash", "-c"]
 
 USER root
-RUN chmod -R 777 /home/omnidb
 #RUN groupadd --system omnidb \
 #    && adduser --system omnidb --gid omnidb \
 #    && yum update \
@@ -17,6 +16,7 @@ RUN groupadd --system omnidb
 RUN adduser --system omnidb --gid omnidb 
 RUN yum -y update
 RUN yum -y install python-devel openldap-devel vim
+RUN chmod -R 777 /home/omnidb
 
 USER omnidb:omnidb
 ENV HOME /home/omnidb

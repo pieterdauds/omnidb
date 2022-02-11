@@ -32,6 +32,7 @@ RUN mv OmniDB-3.0.3b /omni/OmniDB
 
 WORKDIR ${HOME}/OmniDB
 
+USER root
 RUN pip install -r requirements.txt
 
 WORKDIR ${HOME}/OmniDB/OmniDB

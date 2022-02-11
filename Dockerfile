@@ -28,7 +28,7 @@ WORKDIR ${HOME}
 #    && mv OmniDB-${OMNIDB_VERSION} OmniDB
 
 COPY . .
-RUN mv OmniDB-3.0.3b OmniDB
+RUN mv OmniDB-3.0.3b /omni/OmniDB
 
 WORKDIR ${HOME}/OmniDB
 

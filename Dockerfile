@@ -37,9 +37,9 @@ RUN pip install -r requirements.txt
 
 WORKDIR ${HOME}/OmniDB/OmniDB
 
-RUN sed -i "s/LISTENING_ADDRESS    = '127.0.0.1'/LISTENING_ADDRESS    = '0.0.0.0'/g" config.py \
-    && python omnidb-server.py --init \
-    && python omnidb-server.py --dropuser=admin
+RUN sed -i "s/LISTENING_ADDRESS    = '127.0.0.1'/LISTENING_ADDRESS    = '0.0.0.0'/g" config.py
+RUN python omnidb-server.py --init
+RUN python omnidb-server.py --dropuser=admin
 
 EXPOSE 8000
 

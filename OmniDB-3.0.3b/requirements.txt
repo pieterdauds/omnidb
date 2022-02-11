@@ -1,0 +1,15 @@
+Django
+CherryPy
+social-auth-app-django
+django-auth-ldap
+pyscrypt
+pyaes
+openpyxl
+sshtunnel
+psycopg2-binary
+RestrictedPython
+cx_Oracle
+PyMySQL
+sqlparse
+pgspecial
+django-sass

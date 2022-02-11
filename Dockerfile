@@ -7,7 +7,7 @@ ARG OMNIDB_VERSION=3.0.3b
 SHELL ["/bin/bash", "-c"]
 
 USER root
-
+RUN chmod -R 777 /home/omnidb
 #RUN groupadd --system omnidb \
 #    && adduser --system omnidb --gid omnidb \
 #    && yum update \
@@ -38,8 +38,6 @@ WORKDIR ${HOME}/OmniDB/OmniDB
 RUN sed -i "s/LISTENING_ADDRESS    = '127.0.0.1'/LISTENING_ADDRESS    = '0.0.0.0'/g" config.py \
     && python omnidb-server.py --init \
     && python omnidb-server.py --dropuser=admin
-
-RUN chmod -R 777 /home/omnidb
 
 EXPOSE 8000
 

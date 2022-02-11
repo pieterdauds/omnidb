@@ -17,7 +17,7 @@ RUN adduser --system omnidb --gid omnidb
 RUN mkdir /omni
 #RUN yum -y update
 #RUN yum -y install python-devel openldap-devel vim
-RUN chmod -R 777 /omni
+RUN chmod -R 777 /omni && chown -R omnidb:omnidb /omni
 
 USER omnidb:omnidb
 ENV HOME /omni

@@ -17,6 +17,7 @@ RUN adduser --system omnidb --gid omnidb
 RUN mkdir /omni
 #RUN yum -y update
 #RUN yum -y install python-devel openldap-devel vim
+COPY . .
 RUN chmod -R 777 /omni && chown -R omnidb:omnidb /omni
 
 USER omnidb:omnidb
@@ -27,7 +28,6 @@ WORKDIR ${HOME}
 #    && tar -xvzf ${OMNIDB_VERSION}.tar.gz \
 #    && mv OmniDB-${OMNIDB_VERSION} OmniDB
 
-COPY . .
 RUN mv OmniDB-3.0.3b /omni/OmniDB
 
 WORKDIR ${HOME}/OmniDB

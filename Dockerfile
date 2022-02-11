@@ -13,13 +13,14 @@ USER root
 #   && yum install python-devel openldap-devel vim -y
 
 RUN groupadd --system omnidb
-RUN adduser --system omnidb --gid omnidb 
+RUN adduser --system omnidb --gid omnidb
+RUN mkdir /omni
 #RUN yum -y update
 #RUN yum -y install python-devel openldap-devel vim
-RUN chmod -R 777 /home/*
+RUN chmod -R 777 /omni
 
 USER omnidb:omnidb
-ENV HOME /home/omnidb
+ENV HOME /omni
 WORKDIR ${HOME}
 
 #RUN wget https://github.com/OmniDB/OmniDB/archive/${OMNIDB_VERSION}.tar.gz \

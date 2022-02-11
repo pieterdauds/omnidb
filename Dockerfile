@@ -8,10 +8,15 @@ SHELL ["/bin/bash", "-c"]
 
 USER root
 
-RUN groupadd --system omnidb \
-    && adduser --system omnidb --gid omnidb \
-    && yum update \
-    && yum install python-devel openldap-devel vim -y
+#RUN groupadd --system omnidb \
+#    && adduser --system omnidb --gid omnidb \
+#    && yum update \
+#   && yum install python-devel openldap-devel vim -y
+
+RUN groupadd --system omnidb
+RUN adduser --system omnidb --gid omnidb 
+RUN yum -y update
+RUN yum -y install python-devel openldap-devel vim
 
 USER omnidb:omnidb
 ENV HOME /home/omnidb

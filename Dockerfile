@@ -8,7 +8,7 @@ SHELL ["/bin/bash", "-c"]
 
 USER root
 
-RUN addgroup --system omnidb \
+RUN groupadd --system omnidb \
     && adduser --system omnidb --ingroup omnidb \
     && yum update \
     && yum install python-devel openldap-devel vim -y
